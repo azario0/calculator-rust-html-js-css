@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="/main.js" defer></script>
+    <style>
+body{
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        -webkit-user-select: none; 
+        
+
+      }
+.history-tag{
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  border: 5px;
+  border-radius: 5px;
+}
+.wrapper {
+  display: flex;
+  /* horizontally center the children */
+  justify-content: center;
+  /* vertically center the children */
+  align-items: center;
+}
+      .history{
+        width: calc(50%);
+        overflow: scroll;
+        height: 100vh;
+        background-color: grey;
+      }
+
+li {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #ccc;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #aaa;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.display {
+  width: 100%;
+  height: 50px;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  /* margin-bottom: 10px; */
+  margin: 10px;
+  
+}
+
+.numandop {
+  margin-top: auto;
+  /* margin-right: 10px; */
+  /* align-items: center; */
+}
+#results{
+  /* margin-top: 8px; */
+  width: 300px;
+  height: 20px;
+  margin: 0;
+  padding: auto;
+  border: 0;
+}
+
+
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="calculator">
+        <div class="display">
+          <input type="text" id="results">
+        </div>
+        <div class="numandop">
+
+            <li id="mul">*</li>
+            <li id="plus">+</li>
+            <li id="minus">-</li>
+            <li id="divide">/</li>
+            <li id="clear">ac</li>
+
+        </div>
+        <div class="numandop">
+
+            <li id="seven">7</li>
+            <li id="eight">8</li>
+            <li id="nine">9</li>
+
+
+        </div>
+        <div class="numandop">
+
+            <li id="four">4</li>
+            <li id="five">5</li>
+            <li id="six">6</li>
+
+        </div>
+        
+        <div class="numandop">
+            <li id="one">1</li>
+            <li id="two">2</li>
+            <li id="three">3</li>
+
+        </div>
+        <div class="numandop">
+
+            <li id="coma">.</li>
+            <li id="zero">0</li>
+            <li id="equal">=</li>
+        </div>
+      </div>
+    <div class="history">
+      <p class="history-tag">History : </p>
+      <p class = "history-tag" id="history-tag"></p>
+    </div>
+
+    </div>
+  </body>
+</html>
