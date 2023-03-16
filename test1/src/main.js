@@ -10,12 +10,25 @@ let history_selector = document.getElementById('history-tag');
 
 let display = document.getElementById('results');
 
+const re = /(?:(?:^|[-+_*/])(?:\s*-?\d+(\.\d+)?(?:[eE][+-]?\d+)?\s*))+$/;
+
+
 async function calculate() {
+  if (re.test(display.value)){
   result = await invoke("calculate", { e: display.value });
   history += final_string + "<br>" + result + "<br>";
   history_selector.innerHTML=history;
-  final_string=result;
   display.value =result;
+  final_string=result;
+  }
+  else {
+    result="";
+    final_string="";
+    display.value =result;
+  }
+ 
+
+  
 }
 
 window.addEventListener("DOMContentLoaded", () => {
